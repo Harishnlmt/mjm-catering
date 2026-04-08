@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold-50: #fffaf0;
+  --color-gold-100: #fef3c7;
+  --color-gold-200: #fde68a;
+  --color-gold-300: #fcd34d;
+  --color-gold-400: #fbbf24;
+  --color-gold-500: #f59e0b;
+  --color-gold-600: #d97706;
+  --color-gold-700: #b45309;
+  --color-gold-800: #92400e;
+  --color-gold-900: #78350f;
+
+  --color-premium-gold: #D4AF37;
+  --color-premium-black: #050505;
+
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --font-family-serif: "Playfair Display", serif;
+  --font-family-sans: "Inter", sans-serif;
+}
+
+:root {
+  --background: #050505;
+  --foreground: #ffffff;
+  --gold-glow: rgba(212, 175, 55, 0.3);
+}
+
+@layer theme {
+  :root {
+    font-family: "Inter", sans-serif;
+    color-scheme: dark;
+  }
+}
+
+@layer base {
+  * {
+    @apply box-border;
+    padding: 0;
+    margin: 0;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-black text-white font-sans overflow-x-hidden;
+    background: var(--background);
+    color: var(--foreground);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+}
+
+/* Glassmorphism */
+@layer components {
+  .glass {
+    @apply backdrop-blur-[10px] border border-white/5;
+    background: rgba(255, 255, 255, 0.03);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .glass-gold {
+    @apply backdrop-blur-[10px] border border-gold-500/20;
+    background: rgba(212, 175, 55, 0.05);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Gold Gradient Text */
+  .text-gold-gradient {
+    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Gold Glow Effect */
+  .gold-glow {
+    box-shadow: 0 0 20px var(--gold-glow);
+  }
+
+  .gold-glow-hover:hover {
+    box-shadow: 0 0 30px var(--gold-glow);
+    @apply transition-shadow duration-300;
+  }
+}
+
+/* Custom Scrollbar */
+@layer utilities {
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-black;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-700 rounded-full;
+  }
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(212, 175, 55, 0.1),
+      transparent);
+  animation: shimmer 3s infinite;
+}
