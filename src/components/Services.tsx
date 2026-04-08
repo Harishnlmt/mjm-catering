@@ -1,7 +1,3 @@
-"use client";
-
-import React from "react";
-import { motion } from "framer-motion";
 import { Cake, PartyPopper, Heart, Baby, Home, Church } from "lucide-react";
 
 const services = [
@@ -42,38 +38,22 @@ const Services = () => {
         <section id="services" className="py-16 sm:py-24 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-center mb-12 sm:mb-16">
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-gold-500 text-sm sm:text-base font-sans font-bold uppercase tracking-widest mb-2"
-                    >
+                    <h2 className="text-gold-500 text-sm sm:text-base font-sans font-bold uppercase tracking-widest mb-2">
                         Specialized Services
-                    </motion.h2>
-                    <motion.h3
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold"
-                    >
+                    </h2>
+                    <h3 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold">
                         What We <span className="text-gold-gradient">Provide</span>
-                    </motion.h3>
+                    </h3>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                    {services.map((service, index) => (
-                        <motion.div
+                    {services.map((service) => (
+                        <div
                             key={service.title}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            whileHover={{ y: -10 }}
-                            className="glass p-6 sm:p-8 rounded-2xl sm:rounded-3xl group hover:border-gold-500/50 transition-all duration-500 gold-glow-hover"
+                            className="glass p-6 sm:p-8 rounded-2xl sm:rounded-3xl group hover:border-gold-500/50 transition-all duration-500 gold-glow-hover hover:-translate-y-1"
                         >
                             <div className="text-gold-500 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-500">
-                                {React.cloneElement(service.icon, { className: "w-8 h-8 sm:w-10 sm:h-10" })}
+                                {service.icon}
                             </div>
                             <h4 className="text-xl sm:text-2xl font-serif font-bold mb-3 sm:mb-4 group-hover:text-gold-500 transition-colors">
                                 {service.title}
@@ -81,7 +61,7 @@ const Services = () => {
                             <p className="text-white/60 text-sm sm:text-base">
                                 {service.description}
                             </p>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

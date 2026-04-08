@@ -1,6 +1,3 @@
-"use client";
-
-import React from "react";
 import { Phone, Mail, MapPin, Globe, MessageCircle, Send } from "lucide-react";
 
 const Footer = () => {

@@ -1,8 +1,3 @@
-"use client";
-
-import React from "react";
-import { motion } from "framer-motion";
-
 const dishes = [
     {
         name: "Classic Biryani",
@@ -31,34 +26,19 @@ const MenuSection = () => {
         <section id="menu" className="py-24 bg-zinc-950/30">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-gold-500 text-sm sm:text-base font-sans font-bold uppercase tracking-widest mb-2"
-                    >
+                    <h2 className="text-gold-500 text-sm sm:text-base font-sans font-bold uppercase tracking-widest mb-2">
                         Our Specialties
-                    </motion.h2>
-                    <motion.h3
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-8"
-                    >
+                    </h2>
+                    <h3 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-8">
                         Sample <span className="text-gold-gradient">Dishes</span>
-                    </motion.h3>
+                    </h3>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                    {dishes.map((dish, index) => (
-                        <motion.div
+                    {dishes.map((dish) => (
+                        <div
                             key={dish.name}
-                            initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="glass p-6 sm:p-8 rounded-2xl flex flex-col justify-between gap-6 group hover:border-gold-500/30 transition-all duration-300"
+                            className="glass p-6 sm:p-8 rounded-2xl flex flex-col justify-between gap-6 group hover:border-gold-500/30 transition-all duration-300 hover:-translate-y-0.5"
                         >
                             <div className="flex-1">
                                 <h4 className="text-xl sm:text-2xl font-serif font-bold mb-2 group-hover:text-gold-500 transition-colors">{dish.name}</h4>
@@ -67,7 +47,7 @@ const MenuSection = () => {
                             <div className="text-gold-500 font-bold text-lg sm:text-xl whitespace-nowrap">
                                 {dish.price}
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
 

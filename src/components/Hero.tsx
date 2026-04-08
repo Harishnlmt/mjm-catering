@@ -1,7 +1,3 @@
-"use client";
-
-import React from "react";
-import { motion } from "framer-motion";
 import { Phone, MessageSquare, ChevronDown } from "lucide-react";
 
 const Hero = () => {
@@ -15,11 +11,7 @@ const Hero = () => {
                 </div>
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                >
+                <div className="opacity-100 translate-y-0">
                     <h2 className="text-gold-500 font-sans font-semibold tracking-widest uppercase mb-3 sm:mb-4 text-xs sm:text-sm md:text-base">
                         Exquisite Taste, Professional Service
                     </h2>
@@ -31,36 +23,28 @@ const Hero = () => {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-                        <motion.a
+                        <a
                             href="tel:7305658754"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-gold-500 text-black font-bold text-sm sm:text-base md:text-lg hover:bg-gold-400 transition-all gold-glow w-full sm:w-auto justify-center"
+                            className="flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-gold-500 text-black font-bold text-sm sm:text-base md:text-lg hover:bg-gold-400 transition-all transform hover:-translate-y-0.5 active:scale-95 gold-glow w-full sm:w-auto justify-center"
                         >
                             <Phone size={18} /> Call Now
-                        </motion.a>
-                        <motion.a
+                        </a>
+                        <a
                             href="https://wa.me/917305658754"
                             target="_blank"
                             rel="noopener noreferrer"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-full glass-gold text-gold-500 font-bold text-sm sm:text-base md:text-lg hover:bg-gold-500/10 transition-all w-full sm:w-auto justify-center"
+                            className="flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-full glass-gold text-gold-500 font-bold text-sm sm:text-base md:text-lg hover:bg-gold-500/10 transition-all transform hover:-translate-y-0.5 active:scale-95 w-full sm:w-auto justify-center"
                         >
                             <MessageSquare size={18} /> WhatsApp
-                        </motion.a>
+                        </a>
                     </div>
-                </motion.div>
+                </div>
             </div>
 
             {/* Scroll Down Indicator */}
-            <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 text-gold-500/50"
-            >
+            <div className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 text-gold-500/50 animate-bounce">
                 <ChevronDown size={24} />
-            </motion.div>
+            </div>
         </section>
     );
 };
