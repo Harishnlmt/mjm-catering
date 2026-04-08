@@ -1,17 +1,18 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const categories = ["All", "Cooking", "Catering Setup", "Events"];
 
 const galleryImages = [
-    { id: 1, category: "Cooking", title: "Authentic Preparation", url: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=800&auto=format&fit=crop" },
-    { id: 2, category: "Catering Setup", title: "Elegant Buffet", url: "https://images.unsplash.com/photo-1530103043960-ef38714abb15?q=80&w=800&auto=format&fit=crop" },
-    { id: 3, category: "Events", title: "Wedding Celebration", url: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800&auto=format&fit=crop" },
-    { id: 4, category: "Cooking", title: "Traditional Flavors", url: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop" },
-    { id: 5, category: "Catering Setup", title: "Fine Dining Ritual", url: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=800&auto=format&fit=crop" },
-    { id: 6, category: "Events", title: "Festival Feast", url: "https://images.unsplash.com/photo-1520111663212-d04b898a9660?q=80&w=800&auto=format&fit=crop" },
+    { id: 1, category: "Cooking", title: "Authentic Preparation", url: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=640&auto=format&fit=crop" },
+    { id: 2, category: "Catering Setup", title: "Elegant Buffet", url: "https://images.unsplash.com/photo-1530103043960-ef38714abb15?q=80&w=640&auto=format&fit=crop" },
+    { id: 3, category: "Events", title: "Wedding Celebration", url: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=640&auto=format&fit=crop" },
+    { id: 4, category: "Cooking", title: "Traditional Flavors", url: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=640&auto=format&fit=crop" },
+    { id: 5, category: "Catering Setup", title: "Fine Dining Ritual", url: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=640&auto=format&fit=crop" },
+    { id: 6, category: "Events", title: "Festival Feast", url: "https://images.unsplash.com/photo-1520111663212-d04b898a9660?q=80&w=640&auto=format&fit=crop" },
 ];
 
 const Gallery = () => {
@@ -75,10 +76,13 @@ const Gallery = () => {
                                 transition={{ duration: 0.4 }}
                                 className="relative aspect-square rounded-lg sm:rounded-2xl overflow-hidden group border border-white/5"
                             >
-                                <img
+                                <Image
                                     src={img.url}
                                     alt={img.title}
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    fill
+                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                    quality={70}
+                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
                                 <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 sm:p-6">
                                     <div>
