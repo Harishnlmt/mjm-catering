@@ -27,11 +27,14 @@ const Navbar = () => {
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "glass h-16" : "bg-transparent h-20"
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+                isScrolled 
+                    ? "md:glass glass-mobile h-16" 
+                    : "bg-transparent h-20"
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
-                <div className="flex-shrink-0">
+                <div className="shrink-0">
                     <Link href="/" className="text-xl sm:text-2xl font-serif font-bold text-gold-gradient">
                         MJM
                     </Link>
@@ -72,7 +75,7 @@ const Navbar = () => {
 
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
-                <div className="md:hidden glass absolute top-full left-0 right-0 p-4 sm:p-6 flex flex-col space-y-3 sm:space-y-4 items-center z-40 animate-in slide-in-from-top-5 duration-300">
+                <div className="md:hidden glass-mobile absolute top-full left-0 right-0 p-4 sm:p-6 flex flex-col space-y-3 sm:space-y-4 items-center z-40 animate-in slide-in-from-top-5 duration-300">
                     {navLinks.map((link) => (
                         <Link
                             key={link.name}
