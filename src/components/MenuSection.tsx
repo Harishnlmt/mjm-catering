@@ -38,7 +38,7 @@ const MenuSection = () => {
                     {dishes.map((dish) => (
                         <div
                             key={dish.name}
-                            className="glass p-6 sm:p-8 rounded-2xl flex flex-col justify-between gap-6 group hover:border-gold-500/30 transition-all duration-300 hover:-translate-y-0.5"
+                            className="glass p-6 sm:p-8 rounded-2xl flex flex-col justify-between gap-6 group hover:border-gold-500/30 md:hover:border-gold-500/30 transition-all duration-300 hover:-translate-y-0.5 md:hover:-translate-y-0.5"
                         >
                             <div className="flex-1">
                                 <h4 className="text-xl sm:text-2xl font-serif font-bold mb-2 group-hover:text-gold-500 transition-colors">{dish.name}</h4>

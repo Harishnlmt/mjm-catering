@@ -6,7 +6,7 @@ const About = () => {
                     <div className="relative order-2 lg:order-1">
                         <div className="aspect-4/5 rounded-2xl sm:rounded-3xl overflow-hidden glass gold-glow-hover border border-gold-500/20">
                             {/* Owner Image Placeholder */}
-                            <div className="w-full h-full bg-zinc-900 flex items-center justify-center text-gold-500/30 italic text-xs sm:text-base">
+                            <div className="w-full h-full bg-zinc-900 flex items-center justify-center text-gold-500/30 italic text-xs sm:text-base" role="img" aria-label="MJM Catering team photo">
                                 [Owner Image Placeholder]
                             </div>
                             <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent" />
@@ -15,9 +15,8 @@ const About = () => {
                                 <p className="text-white/60 text-xs sm:text-sm">Dedicated to taste</p>
                             </div>
                         </div>
-                        {/* Decorative element */}
-                        <div className="absolute -top-3 sm:-top-6 -left-3 sm:-left-6 w-16 sm:w-24 h-16 sm:h-24 border-t-2 border-l-2 border-gold-500 opacity-30" />
-                        <div className="absolute -bottom-3 sm:-bottom-6 -right-3 sm:-right-6 w-16 sm:w-24 h-16 sm:h-24 border-b-2 border-r-2 border-gold-500 opacity-30" />
+                        <div className="absolute -top-3 sm:-top-6 -left-3 sm:-left-6 w-16 sm:w-24 h-16 sm:h-24 border-t-2 border-l-2 border-gold-500 opacity-30 md:opacity-30" />
+                        <div className="absolute -bottom-3 sm:-bottom-6 -right-3 sm:-right-6 w-16 sm:w-24 h-16 sm:h-24 border-b-2 border-r-2 border-gold-500 opacity-30 md:opacity-30" />
                     </div>
 
                     <div className="order-1 lg:order-2">

@@ -40,7 +40,7 @@ const Testimonials = () => {
                             key={t.name}
                             className="glass p-6 sm:p-8 md:p-10 rounded-2xl md:rounded-3xl relative group"
                         >
-                            <Quote className="absolute top-4 sm:top-6 right-4 sm:right-6 text-gold-500 opacity-10 group-hover:opacity-30 transition-opacity" size={32} />
+                            <Quote className="absolute top-4 sm:top-6 right-4 sm:right-6 text-gold-500 opacity-10 md:group-hover:opacity-30 md:transition-opacity" size={32} />
                             <div className="flex gap-1 mb-4 sm:mb-6">
                                 {[...Array(t.rating)].map((_, i) => (
                                     <Star key={i} size={14} className="fill-gold-500 text-gold-500" />

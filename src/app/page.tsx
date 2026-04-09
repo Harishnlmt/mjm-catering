@@ -1,12 +1,14 @@
+import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import About from "@/components/About";
-import Gallery from "@/components/Gallery";
 import MenuSection from "@/components/MenuSection";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
+
+const Gallery = dynamic(() => import("@/components/Gallery"));
 
 export default function Home() {
   return (

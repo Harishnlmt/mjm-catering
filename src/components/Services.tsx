@@ -50,9 +50,9 @@ const Services = () => {
                     {services.map((service) => (
                         <div
                             key={service.title}
-                            className="glass p-6 sm:p-8 rounded-2xl sm:rounded-3xl group hover:border-gold-500/50 transition-all duration-500 gold-glow-hover hover:-translate-y-1"
+                            className="glass p-6 sm:p-8 rounded-2xl sm:rounded-3xl group hover:border-gold-500/50 md:hover:border-gold-500/50 transition-all duration-500 gold-glow-hover md:gold-glow-hover hover:-translate-y-1 md:hover:-translate-y-1"
                         >
-                            <div className="text-gold-500 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-500">
+                            <div className="text-gold-500 mb-4 sm:mb-6 group-hover:scale-110 md:group-hover:scale-110 transition-transform duration-500">
                                 {service.icon}
                             </div>
                             <h4 className="text-xl sm:text-2xl font-serif font-bold mb-3 sm:mb-4 group-hover:text-gold-500 transition-colors">

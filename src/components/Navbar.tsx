@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Phone, MessageSquare } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -72,43 +71,36 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu */}
-            <AnimatePresence>
-                {isMobileMenuOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        className="md:hidden glass absolute top-full left-0 right-0 p-4 sm:p-6 flex flex-col space-y-3 sm:space-y-4 items-center z-40"
-                    >
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.name}
-                                href={link.href}
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className="text-base sm:text-lg font-medium text-white/80 hover:text-gold-500 transition-colors w-full text-center py-2"
-                            >
-                                {link.name}
-                            </Link>
-                        ))}
-                        <div className="flex flex-col gap-2 sm:gap-3 w-full border-t border-white/10 pt-3 sm:pt-4 mt-2">
-                            <a
-                                href="tel:7305658754"
-                                className="flex items-center justify-center gap-2 w-full py-2 sm:py-3 rounded-lg sm:rounded-xl border border-gold-500 text-gold-500 hover:bg-gold-500/10 transition-colors text-sm sm:text-base"
-                            >
-                                <Phone size={18} /> Call Now
-                            </a>
-                            <a
-                                href="https://wa.me/917305658754"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center justify-center gap-2 w-full py-2 sm:py-3 rounded-lg sm:rounded-xl bg-gold-500 text-black font-semibold hover:bg-gold-400 transition-all text-sm sm:text-base"
-                            >
-                                <MessageSquare size={18} /> Book on WhatsApp
-                            </a>
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            {isMobileMenuOpen && (
+                <div className="md:hidden glass absolute top-full left-0 right-0 p-4 sm:p-6 flex flex-col space-y-3 sm:space-y-4 items-center z-40 animate-in slide-in-from-top-5 duration-300">
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.name}
+                            href={link.href}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="text-base sm:text-lg font-medium text-white/80 hover:text-gold-500 transition-colors w-full text-center py-2"
+                        >
+                            {link.name}
+                        </Link>
+                    ))}
+                    <div className="flex flex-col gap-2 sm:gap-3 w-full border-t border-white/10 pt-3 sm:pt-4 mt-2">
+                        <a
+                            href="tel:7305658754"
+                            className="flex items-center justify-center gap-2 w-full py-2 sm:py-3 rounded-lg sm:rounded-xl border border-gold-500 text-gold-500 hover:bg-gold-500/10 transition-colors text-sm sm:text-base"
+                        >
+                            <Phone size={18} /> Call Now
+                        </a>
+                        <a
+                            href="https://wa.me/917305658754"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center gap-2 w-full py-2 sm:py-3 rounded-lg sm:rounded-xl bg-gold-500 text-black font-semibold hover:bg-gold-400 transition-all text-sm sm:text-base"
+                        >
+                            <MessageSquare size={18} /> Book on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            )}
         </nav>
     );
 };

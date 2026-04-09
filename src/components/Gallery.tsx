@@ -61,7 +61,7 @@ const Gallery = () => {
                                     fill
                                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                     quality={70}
-                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                    className="object-cover md:transition-transform md:duration-700 md:group-hover:scale-110"
                                 />
                                 <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 sm:p-6">
                                     <div>

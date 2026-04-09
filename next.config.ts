@@ -12,7 +12,10 @@ const nextConfig: NextConfig = {
         hostname: "www.transparenttextures.com",
       },
     ],
+    formats: ['image/webp', 'image/avif'],
   },
+  compress: true,
+  poweredByHeader: false,
   /* config options here */
 };
 
