@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const About = () => {
     return (
         <section id="about" className="py-16 sm:py-24 bg-zinc-950/50 relative overflow-hidden">
@@ -5,14 +7,18 @@ const About = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
                     <div className="relative order-2 lg:order-1">
                         <div className="aspect-4/5 rounded-2xl sm:rounded-3xl overflow-hidden glass gold-glow-hover border border-gold-500/20">
-                            {/* Owner Image Placeholder */}
-                            <div className="w-full h-full bg-zinc-900 flex items-center justify-center text-gold-500/30 italic text-xs sm:text-base" role="img" aria-label="MJM Catering team photo">
-                                [Owner Image Placeholder]
-                            </div>
+                            {/* Owner Image */}
+                            <Image
+                                src="/mjm-owner.jpeg"
+                                alt="MJM Catering Owner"
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 1024px) 100vw, 50vw"
+                            />
                             <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent" />
                             <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6">
-                                <p className="text-gold-500 font-serif text-lg sm:text-2xl font-bold">MJM Catering Team</p>
-                                <p className="text-white/60 text-xs sm:text-sm">Dedicated to taste</p>
+                                <p className="text-gold-500 font-serif text-lg sm:text-2xl font-bold">Rithish Kumar J M</p>
+                                <p className="text-white/60 text-xs sm:text-sm">CEO MJM Catering</p>
                             </div>
                         </div>
                         <div className="absolute -top-3 sm:-top-6 -left-3 sm:-left-6 w-16 sm:w-24 h-16 sm:h-24 border-t-2 border-l-2 border-gold-500 opacity-30 md:opacity-30" />
