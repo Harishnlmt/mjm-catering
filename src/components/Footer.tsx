@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, Globe, MessageCircle, Send } from "lucide-react";
+import Image from "next/image";
 
 const Footer = () => {
     return (
@@ -7,7 +8,15 @@ const Footer = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-12 sm:mb-16">
                     {/* Brand */}
                     <div className="lg:col-span-1">
-                        <h2 className="text-2xl sm:text-3xl font-serif font-bold text-gold-gradient mb-4 sm:mb-6">MJM</h2>
+                        <div className="mb-4 sm:mb-6">
+                            <Image
+                                src="/mjm-logo.jpeg"
+                                alt="MJM Catering"
+                                width={220}
+                                height={220}
+                                className="h-20 w-20 sm:h-22 sm:w-22 object-contain"
+                            />
+                        </div>
                         <p className="text-white/50 leading-relaxed font-sans text-sm sm:text-base mb-6 sm:mb-8">
                             Providing high-quality cooking and catering services for all types of events with authentic taste and professional service.
                         </p>

@@ -1,4 +1,5 @@
 import { Phone, MessageSquare, ChevronDown } from "lucide-react";
+import Image from "next/image";
 
 const Hero = () => {
     return (
@@ -15,11 +16,18 @@ const Hero = () => {
                     <h2 className="text-gold-500 font-sans font-semibold tracking-widest uppercase mb-3 sm:mb-4 text-xs sm:text-sm md:text-base">
                         Exquisite Taste, Professional Service
                     </h2>
-                    <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-4 sm:mb-6 leading-tight">
-                        MJM <span className="text-gold-gradient">Catering</span>
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-4 sm:mb-6 leading-tight flex items-center justify-center gap-4">
+                        <Image
+                            src="/mjm-logo.jpeg"
+                            alt="MJM"
+                            width={220}
+                            height={220}
+                            className="h-20 w-20 sm:h-26 sm:w-26 md:h-30 md:w-30 object-contain"
+                        />
+                        <span className="text-gold-gradient">Catering</span>
                     </h1>
                     <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/70 max-w-2xl mx-auto font-sans mb-6 sm:mb-10 italic">
-                        "You invite people, we impress them"
+                        "Your Menu Is Ready"
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">

@@ -2,22 +2,22 @@ const dishes = [
     {
         name: "Classic Biryani",
         description: "Authentic slow-cooked aromatic basmati rice with premium spices and meat.",
-        price: "From ₹250",
+        
     },
     {
         name: "Traditional Thali",
         description: "A complete meal featuring seasonal vegetables, dal, rice, and traditional desserts.",
-        price: "From ₹350",
+       
     },
     {
         name: "Golden Appetizers",
         description: "A variety of premium starters, from crispy samosas to honey-glazed wings.",
-        price: "From ₹150",
+      
     },
     {
         name: "Gourmet Desserts",
         description: "Traditional sweets like Gulab Jamun and modern pastries with a gold touch.",
-        price: "From ₹200",
+        
     },
 ];
 
@@ -30,7 +30,7 @@ const MenuSection = () => {
                         Our Specialties
                     </h2>
                     <h3 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-8">
-                        Sample <span className="text-gold-gradient">Dishes</span>
+                        Signature <span className="text-gold-gradient">Dishes</span>
                     </h3>
                 </div>
 
@@ -45,7 +45,7 @@ const MenuSection = () => {
                                 <p className="text-white/60 font-sans text-sm sm:text-base">{dish.description}</p>
                             </div>
                             <div className="text-gold-500 font-bold text-lg sm:text-xl whitespace-nowrap">
-                                {dish.price}
+                               
                             </div>
                         </div>
                     ))}
